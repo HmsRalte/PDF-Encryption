@@ -52,16 +52,16 @@ Definitions and explanations of the keywords will be written in the code as best
    - The loop starts from page 0 (first page) and goes up to 'len(pdf_read.pages)- 1'.
 
    *adding the current page to the PdfFileWriter object*
-   -pdf_writer: PdfFileWriter object used for creating or modifying a PDF file.
+   - pdf_writer: PdfFileWriter object used for creating or modifying a PDF file.
    *this line adds the current page ti the PdfFileWriter object which is being used in a new PDF file or modify an existing one.*
-   -pdf_reader.pages[page_num]: represents the specific page being added to the PdfWriter
+   - pdf_reader.pages[page_num]: represents the specific page being added to the PdfWriter
    *the loop continues until all pages form the PdfReader have been added to the PdfWriter*
 
 5. **pdf_writer.encrypt(password)**
    
    *encrypts the PDF content using the specified password*
    
-   -passowrd(str): provided as an argument to the encypt method.
+   - password(str): provided as an argument to the encypt method.
    
 7. **with open(output_pdf, 'wb') as output_file:
             pdf_writer.write(output_file)**
