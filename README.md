@@ -13,7 +13,7 @@ Definitions and explanations of the keywords will be written in the code as best
   -> output_pdf (str): Path to the output PDF file where the encrypted PDF will be saved.
   -> password (str): The password used for encrypting the PDF.
 
-<span style="color: red;">with open(input_pdf, 'rb') as file:</span>
+with open(input_pdf, 'rb') as file:
 
   # with statement is used to open the file in context manager, ensuring file is properly closed after its suite finishes or if an exception occurs
   #open(input_pdf, 'rb'): Opens the file specified by input_pdf in binary read mode
