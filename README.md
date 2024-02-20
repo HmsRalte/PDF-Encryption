@@ -58,11 +58,14 @@ Definitions and explanations of the keywords will be written in the code as best
    *the loop continues until all pages form the PdfReader have been added to the PdfWriter*
 
 5. **pdf_writer.encrypt(password)**
+   
    *encrypts the PDF content using the specified password*
+   
    -passowrd(str): provided as an argument to the encypt method.
    
-6. **with open(output_pdf, 'wb') as output_file:
+7. **with open(output_pdf, 'wb') as output_file:
             pdf_writer.write(output_file)**
+   
    *opens a new PDF file in bimary write mode for saving the encypted content*
    - output_pdf(str): Path to  the output PDF file where the encrypted PDF will be stored
      *this opens a new PDF file in binary write mode using 'with' statement, "output_pdf" is the path to the file where the encypted pdf is stored( default root folder where the .py file is being run*
