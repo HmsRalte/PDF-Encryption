@@ -42,36 +42,36 @@ Definitions and explanations of the keywords will be written in the code as best
 3. **pdf_writer = PyPDF2.PdfWriter()**
    *the line initializes a PdfFileWriter object from the PyPDF2 library, which is used for creating or modifying PDF files.
 
-   - pdf_writer: this object allows to add pages, annotations and other elements to create a new PDF file or modify an exisitng one (eg: pdf_writer.addPage(page))
+- pdf_writer: this object allows to add pages, annotations and other elements to create a new PDF file or modify an exisitng one (eg: pdf_writer.addPage(page))
 
 4. **for page_num in range(len(pdf_reader.pages)):
             pdf_writer.add_page(pdf_reader.pages[page_num])**
 
    *we iterate through each page of the pdf_reader and adding each page to the pdf_writer*
-   - pdf_reader: contains the opened PDF file.
-   - page_num: represents the current page number in the iteration
-   - pdf_reader.pages: its a list of all the pages in the PDF file and pdf_reader.pages represent the specific page at the current iteration.
-   - The loop starts from page 0 (first page) and goes up to 'len(pdf_read.pages)- 1'.
+- pdf_reader: contains the opened PDF file.
+- page_num: represents the current page number in the iteration
+- pdf_reader.pages: its a list of all the pages in the PDF file and pdf_reader.pages represent the specific page at the current iteration.
+- The loop starts from page 0 (first page) and goes up to 'len(pdf_read.pages)- 1'.
 
    *adding the current page to the PdfFileWriter object*
-   - pdf_writer: PdfFileWriter object used for creating or modifying a PDF file.
+- pdf_writer: PdfFileWriter object used for creating or modifying a PDF file.
    *this line adds the current page ti the PdfFileWriter object which is being used in a new PDF file or modify an existing one.*
-   - pdf_reader.pages[page_num]: represents the specific page being added to the PdfWriter
+- pdf_reader.pages[page_num]: represents the specific page being added to the PdfWriter
    *the loop continues until all pages form the PdfReader have been added to the PdfWriter*
 
 5. **pdf_writer.encrypt(password)**
    
    *encrypts the PDF content using the specified password*
    
-   - password(str): provided as an argument to the encypt method.
+- password(str): provided as an argument to the encypt method.
    
 7. **with open(output_pdf, 'wb') as output_file:
             pdf_writer.write(output_file)**
    
    *opens a new PDF file in bimary write mode for saving the encypted content*
-   - output_pdf(str): Path to  the output PDF file where the encrypted PDF will be stored
+- output_pdf(str): Path to  the output PDF file where the encrypted PDF will be stored
      *this opens a new PDF file in binary write mode using 'with' statement, "output_pdf" is the path to the file where the encypted pdf is stored( default root folder where the .py file is being run*
-   - wb: w stands for write mode, b stands for binary mode.
-   - output_file: file representing the opened output pdf ifle in binary write mode
+- wb: w stands for write mode, b stands for binary mode.
+- output_file: file representing the opened output pdf ifle in binary write mode
      *this line writes the encrypted content stored in the pdf_writer to the output*
      *after this, the encypted content is saed to the specified output PDF file.*
