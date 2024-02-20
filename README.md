@@ -65,7 +65,7 @@ Definitions and explanations of the keywords will be written in the code as best
    
 - password(str): provided as an argument to the encypt method.
    
-7. **with open(output_pdf, 'wb') as output_file:
+6. **with open(output_pdf, 'wb') as output_file:
             pdf_writer.write(output_file)**
    
    *opens a new PDF file in bimary write mode for saving the encypted content*
