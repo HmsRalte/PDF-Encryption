@@ -35,9 +35,9 @@ Definitions and explanations of the keywords will be written in the code as best
 
 2. **pdf_reader = PyPDF2.PdfReader(file)**
    
-   - file: The file object representing the opened PDF file in binary mode.
+- file: The file object representing the opened PDF file in binary mode.
 
-   - pdf_reader: This parameter provides methods to access and manipulate the contents of the PDF file.
+- pdf_reader: This parameter provides methods to access and manipulate the contents of the PDF file.
 
 3. **pdf_writer = PyPDF2.PdfWriter()**
    *the line initializes a PdfFileWriter object from the PyPDF2 library, which is used for creating or modifying PDF files.
