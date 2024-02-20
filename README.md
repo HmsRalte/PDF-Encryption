@@ -15,7 +15,7 @@ Definitions and explanations of the keywords will be written in the code as best
 
 with open(input_pdf, 'rb') as file:
 
-  # with statement is used to open the file in context manager, ensuring file is properly closed after its suite finishes or if an exception occurs
+  #with statement is used to open the file in context manager, ensuring file is properly closed after its suite finishes or if an exception occurs
   #open(input_pdf, 'rb'): Opens the file specified by input_pdf in binary read mode
     -> 'rb': 'r' stands for read mode, and 'b' stands for binary mode, indicating file should be treated as a binary file
     # A binary file contains data in format composed of 0's and 1's unlike ASCII or UTF-8, PDFs are made to be read as binary file because they contain stricterd format that includes binary data
