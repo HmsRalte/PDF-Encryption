@@ -1,4 +1,4 @@
-# PDF-Encryption
+ # PDF-Encryption
 Short Python Code for encrypting PDFs
 
 In this code, we are using the following libraries:
@@ -17,9 +17,9 @@ Definitions and explanations of the keywords will be written in the code as best
 
   *with statement is used to open the file in context manager, ensuring file is properly closed after its suite finishes or if an exception occurs*
   
-  -open(input_pdf, 'rb'): Opens the file specified by input_pdf in binary read mode
+  - open(input_pdf, 'rb'): Opens the file specified by input_pdf in binary read mode
   
-   -> 'rb': 'r' stands for read mode, and 'b' stands for binary mode, indicating file should be treated as a binary file
+  - 'rb': 'r' stands for read mode, and 'b' stands for binary mode, indicating file should be treated as a binary file
     
    *A binary file contains data in format composed of 0's and 1's unlike ASCII or UTF-8, PDFs are made to be read as binary file because they contain stricterd format that includes binary data*
     
@@ -27,15 +27,15 @@ Definitions and explanations of the keywords will be written in the code as best
     
    *This is crucial for correctly interpreting the binary data within the PDF, which includes both textual content and binary-encoded elements like images.*
     
-   -> 'as file': assigns the file object to the variable file for further operations within the indented block.
+   - 'as file': assigns the file object to the variable file for further operations within the indented block.
     
-   -> Inside this block, we can perform operations such as reading, writing or processing the contents of the opened PDF file. Once this block is exited  the file is automatically closed thanks to the 'with' statement.
+   *Inside this block, we can perform operations such as reading, writing or processing the contents of the opened PDF file. Once this block is exited  the file is automatically closed thanks to the 'with' statement.*
 
 2. **pdf_reader = PyPDF2.PdfReader(file)**
    
-   -file: The file object representing the opened PDF file in binary mode.
+   - file: The file object representing the opened PDF file in binary mode.
 
-   -pdf_reader: This parameter provides methods to access and manipulate the contents of the PDF file.
+   - pdf_reader: This parameter provides methods to access and manipulate the contents of the PDF file.
 
 3. **pdf_writer = PyPDF2.PdfWriter()**
    *the line initializes a PdfFileWriter object from the PyPDF2 library, which is used for creating or modifying PDF files.
@@ -57,5 +57,16 @@ Definitions and explanations of the keywords will be written in the code as best
    -pdf_reader.pages[page_num]: represents the specific page being added to the PdfWriter
    *the loop continues until all pages form the PdfReader have been added to the PdfWriter*
 
-5.
+5. **pdf_writer.encrypt(password)**
+   *encrypts the PDF content using the specified password*
+   -passowrd(str): provided as an argument to the encypt method.
    
+6. **with open(output_pdf, 'wb') as output_file:
+            pdf_writer.write(output_file)**
+   *opens a new PDF file in bimary write mode for saving the encypted content*
+   - output_pdf(str): Path to  the output PDF file where the encrypted PDF will be stored
+     *this opens a new PDF file in binary write mode using 'with' statement, "output_pdf" is the path to the file where the encypted pdf is stored( default root folder where the .py file is being run*
+   - wb: w stands for write mode, b stands for binary mode.
+   - output_file: file representing the opened output pdf ifle in binary write mode
+     *this line writes the encrypted content stored in the pdf_writer to the output*
+     *after this, the encypted content is saed to the specified output PDF file.*
