@@ -68,10 +68,16 @@ Definitions and explanations of the keywords will be written in the code as best
 6. **with open(output_pdf, 'wb') as output_file:
             pdf_writer.write(output_file)**
    
-   *opens a new PDF file in bimary write mode for saving the encypted content*
+*opens a new PDF file in bimary write mode for saving the encypted content*
+
 - output_pdf(str): Path to  the output PDF file where the encrypted PDF will be stored
-     *this opens a new PDF file in binary write mode using 'with' statement, "output_pdf" is the path to the file where the encypted pdf is stored( default root folder where the .py file is being run*
+  
+*this opens a new PDF file in binary write mode using 'with' statement, "output_pdf" is the path to the file where the encypted pdf is stored( default root folder where the .py file is being run*
+  
 - wb: w stands for write mode, b stands for binary mode.
+  
 - output_file: file representing the opened output pdf ifle in binary write mode
+  
      *this line writes the encrypted content stored in the pdf_writer to the output*
+  
      *after this, the encypted content is saed to the specified output PDF file.*
