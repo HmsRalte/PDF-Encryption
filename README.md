@@ -7,13 +7,13 @@ In this code, we are using the following libraries:
 The rest if the code is very self explanatory as it is a very short code.
 Definitions and explanations of the keywords will be written in the code as best I can.
 
-
- ###Parameters:
+---
+ ### Parameters:
   -> input_pdf (str): Path to the input PDF file to be encrypted.
   -> output_pdf (str): Path to the output PDF file where the encrypted PDF will be saved.
   -> password (str): The password used for encrypting the PDF.
 
-1) with open(input_pdf, 'rb') as file:
+1. with open(input_pdf, 'rb') as file:
 
   *with statement is used to open the file in context manager, ensuring file is properly closed after its suite finishes or if an exception occurs*
   
