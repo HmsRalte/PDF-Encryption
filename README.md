@@ -13,7 +13,7 @@ Definitions and explanations of the keywords will be written in the code as best
   -> output_pdf (str): Path to the output PDF file where the encrypted PDF will be saved.
   -> password (str): The password used for encrypting the PDF.
 
-1. with open(input_pdf, 'rb') as file:
+1. **with open(input_pdf, 'rb') as file:**
 
   *with statement is used to open the file in context manager, ensuring file is properly closed after its suite finishes or if an exception occurs*
   
@@ -27,7 +27,35 @@ Definitions and explanations of the keywords will be written in the code as best
     
    *This is crucial for correctly interpreting the binary data within the PDF, which includes both textual content and binary-encoded elements like images.*
     
-   -> 'as file': assigns the file object to the vraible file for further operations within the indented block.
+   -> 'as file': assigns the file object to the variable file for further operations within the indented block.
     
    -> Inside this block, we can perform operations such as reading, writing or processing the contents of the opened PDF file. Once this block is exited  the file is automatically closed thanks to the 'with' statement.
-    
+
+2. **pdf_reader = PyPDF2.PdfReader(file)**
+   
+   -file: The file object representing the opened PDF file in binary mode.
+
+   -pdf_reader: This parameter provides methods to access and manipulate the contents of the PDF file.
+
+3. **pdf_writer = PyPDF2.PdfWriter()**
+   *the line initializes a PdfFileWriter object from the PyPDF2 library, which is used for creating or modifying PDF files.
+
+   - pdf_writer: this object allows to add pages, annotations and other elements to create a new PDF file or modify an exisitng one (eg: pdf_writer.addPage(page))
+
+4. **for page_num in range(len(pdf_reader.pages)):
+            pdf_writer.add_page(pdf_reader.pages[page_num])**
+
+   *we iterate through each page of the pdf_reader and adding each page to the pdf_writer*
+   - pdf_reader: contains the opened PDF file.
+   - page_num: represents the current page number in the iteration
+   - pdf_reader.pages: its a list of all the pages in the PDF file and pdf_reader.pages represent the specific page at the current iteration.
+   - The loop starts from page 0 (first page) and goes up to 'len(pdf_read.pages)- 1'.
+
+   *adding the current page to the PdfFileWriter object*
+   -pdf_writer: PdfFileWriter object used for creating or modifying a PDF file.
+   *this line adds the current page ti the PdfFileWriter object which is being used in a new PDF file or modify an existing one.*
+   -pdf_reader.pages[page_num]: represents the specific page being added to the PdfWriter
+   *the loop continues until all pages form the PdfReader have been added to the PdfWriter*
+
+5.
+   
